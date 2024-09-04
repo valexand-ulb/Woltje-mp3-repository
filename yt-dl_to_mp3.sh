@@ -12,7 +12,7 @@
 function download_from_yt
     set dir $argv[1]
     cat "$dir/links.txt" | while read -l url
-        yt-dlp -q $url -o "$dir/%(title)s.%(ext)s"
+        yt-dlp --break-on-existing -q $url -o "$dir/%(title)s.%(ext)s"
     end
 end
 
